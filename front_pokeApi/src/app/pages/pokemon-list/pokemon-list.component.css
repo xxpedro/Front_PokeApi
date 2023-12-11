@@ -1,0 +1,38 @@
+.pagination-button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 8px;
+  border: 2px solid #4CAF50;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-button:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+.prev-button {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.prev-button:hover {
+  background-color: #0056b3;
+}
+
+.next-button {
+  background-color: #ff5722;
+  border-color: #ff5722;
+}
+
+.next-button:hover {
+  background-color: #e64a19;
+}
+
+.pagination-button i {
+  margin-right: 5px;
+}

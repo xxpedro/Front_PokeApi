@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <div class="header-section text-center mb-4">
+    <h4 class="text-uppercase">Editar Pokémon</h4>
+    <hr class="w-25 mx-auto">
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10 mb-4 pokemon-section">
+      <div class="card elegant-card">
+        <img class="card-img-top levitating-image" width="400px" height="400px" [src]="currentPokemon.image" alt="Pokemon Shiny">
+        <div class="card-body text-center">
+          <h3 class="card-title">{{ currentPokemon.name }}</h3>
+
+          <form [formGroup]="editForm" (ngSubmit)="updatePokemon()" class="edit-form">
+            <div class="mb-3">
+              <label for="pokemonName" class="form-label">Nuevo Nombre:</label>
+              <input type="text" class="form-control" id="pokemonName" formControlName="pokemonName" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Editar Pokémon</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

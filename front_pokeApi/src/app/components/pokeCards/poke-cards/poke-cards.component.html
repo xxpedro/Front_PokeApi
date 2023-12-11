@@ -1,0 +1,11 @@
+<div class="generic-card" [@fadeInOut] *ngIf="data">
+  <div class="card-header bg-danger" (click)="toggleDetails()">
+    <h2>{{ data.title | uppercase}}</h2>
+  </div>
+  <div class="card-image">
+    <img [src]="data.image" alt="{{ data.title }}">
+  </div>
+  <div class="card-details" [@slideUp] *ngIf="showDetails">
+    <ng-content></ng-content>
+  </div>
+</div>

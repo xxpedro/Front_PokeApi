@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h4 class="text-center text-uppercase">Pokémones Favoritos</h4>
+  <hr class="my-4">
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let pokemon of favoritesPokemons | paginate: { itemsPerPage: pageSize, currentPage: currentPage }">
+      <div class="card border-0 shadow" style="cursor: pointer;">
+        <img [routerLink]="['/edit', pokemon.name]" class="card-img-top rounded-top" height="200px" [src]="pokemon.image" alt="{{ pokemon.name }} Image">
+        <div class="card-body text-center">
+          <h5 class="card-title font-weight-bold">{{ pokemon.name | uppercase}} - {{ pokemon.createdAt | date: "dd-MM-yyyy" }}
+          </h5>
+          <div class="button-container mt-3">
+            <button (click)="deletePokemon(pokemon.name)" class="btn btn-danger btn-sm">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
+</div>

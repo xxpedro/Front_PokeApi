@@ -1,0 +1,56 @@
+.generic-card {
+  border: 2px solid gray;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  margin: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.generic-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.card-header {
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-details {
+  padding: 16px;
+}
+
+.card-details p {
+  margin: 8px 0;
+}
+
+.generic-card::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.generic-card:hover::before {
+  transform: scaleY(1);
+}
